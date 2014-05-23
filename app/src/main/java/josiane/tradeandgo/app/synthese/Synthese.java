@@ -1,12 +1,17 @@
-package josiane.tradeandgo.app;
+package josiane.tradeandgo.app.synthese;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import josiane.tradeandgo.app.R;
 
-public class Synthese extends Activity {
+/**
+ * Created by Kevin on 23/05/2014.
+ */
+public class Synthese extends Activity{
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +22,7 @@ public class Synthese extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        
+
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.synthese, menu);
         return true;
@@ -34,5 +39,4 @@ public class Synthese extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-
 }
