@@ -8,7 +8,7 @@
     android:layout_height="match_parent">
     <RelativeLayout
         android:id="@+id/body_layout"
-        android:layout_width="fill_parent"
+        android:layout_width="@dimen/glass_card_body_layout_width"
         android:layout_height="@dimen/glass_card_body_height"
         android:layout_marginLeft="@dimen/glass_card_margin"
         android:layout_marginTop="@dimen/glass_card_margin"
@@ -16,57 +16,80 @@
         tools:ignore="UselessLeaf">
 
         <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="fill_parent"
             android:columnCount="2"
-            android:rowCount="3"
+            android:rowCount="4"
             android:addStatesFromChildren="false"
             android:useDefaultMargins="true"
             android:layout_gravity="center"
             android:id="@+id/gridLayout2">
 
-            <TextView
-                android:layout_width="@dimen/glass_card_two_column_width"
-                android:layout_height="@dimen/glass_card_two_column_height"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="ACCOR"
-                android:id="@+id/info_nomTitre"
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_row="0"
-                android:layout_column="0"
-                android:gravity="center"
-                android:layout_gravity="center" />
+                android:layout_column="0">
+
+                <TextView
+                    style="@style/Titre"
+                    android:layout_width="@dimen/glass_card_information_column_left_width"
+                    android:layout_height="@dimen/glass_card_information_column_left_row_1_height"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="ALU"
+                    android:id="@+id/textView"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:gravity="center_vertical" />
+
+                <TextView
+                    style="@style/SousTitre"
+                    android:layout_width="@dimen/glass_card_information_column_left_width"
+                    android:layout_height="@dimen/glass_card_information_column_left_row_2_height"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Alcatel-Lucent"
+                    android:id="@+id/textView2"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:gravity="center_vertical" />
+
+            </GridLayout>
 
             <ImageView
-                android:layout_width="@dimen/glass_card_two_column_width"
-                android:layout_height="@dimen/glass_card_two_column_height"
+                android:layout_width="@dimen/glass_card_information_column_right_width"
+                android:layout_height="@dimen/glass_card_information_column_right_row_1_height"
                 android:id="@+id/info_humeur"
                 android:layout_row="0"
                 android:layout_column="1"
                 android:src="@drawable/sun"
-                android:layout_gravity="center" />
+                style="@style/YellowFont" />
 
             <TextView
-                android:layout_width="@dimen/glass_card_two_column_width"
-                android:layout_height="@dimen/glass_card_two_column_height"
+                android:layout_width="@dimen/glass_card_information_column_left_width"
+                android:layout_height="@dimen/glass_card_information_column_left_row_3_height"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="36.430"
+                android:text="36.430 EUR"
                 android:id="@+id/info_valeurTitre"
                 android:layout_row="1"
                 android:layout_column="0"
-                android:layout_gravity="center"
-                android:gravity="center" />
+                android:textStyle="bold"
+                android:textSize="40px"
+                android:gravity="bottom" />
 
             <TextView
-                android:layout_width="@dimen/glass_card_two_column_width"
-                android:layout_height="@dimen/glass_card_two_column_height"
+                android:layout_width="@dimen/glass_card_information_column_right_width"
+                android:layout_height="@dimen/glass_card_information_column_right_row_2_height"
                 android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="+1.17"
+                android:text="+1.17 %"
                 android:id="@+id/info_variationTitre"
                 android:layout_row="1"
                 android:layout_column="1"
                 android:gravity="center"
-                android:layout_gravity="center" />
+                style="@style/GreenFont"
+                android:textStyle="bold"
+                android:textSize="40px" />
 
         </GridLayout>
+
     </RelativeLayout>
 </FrameLayout>
