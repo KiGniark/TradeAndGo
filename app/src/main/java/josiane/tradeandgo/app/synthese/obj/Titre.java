@@ -5,10 +5,10 @@ package josiane.tradeandgo.app.synthese.obj;
  */
 public class Titre {
     private String code;
-    private float valeur;
-    private float variation;
+    private double valeur;
+    private double variation;
 
-    public Titre(String acode, float avaleur, float avar){
+    public Titre(String acode, double avaleur, double avar){
         code = acode;
         valeur = avaleur;
         variation = avar;
@@ -23,7 +23,7 @@ public class Titre {
         this.code = code;
     }
 
-    public float getValeur() {
+    public double getValeur() {
         return valeur;
     }
 
@@ -31,7 +31,7 @@ public class Titre {
         this.valeur = valeur;
     }
 
-    public float getVariation() {
+    public double getVariation() {
         return variation;
     }
 

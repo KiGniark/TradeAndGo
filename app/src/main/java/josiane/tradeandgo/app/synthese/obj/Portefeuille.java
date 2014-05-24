@@ -11,19 +11,27 @@ import josiane.tradeandgo.app.synthese.view.TitreCard;
  */
 public class Portefeuille {
     private ArrayList<Titre> mTitre;
-    private ArrayList<TitreCard> mCards;
     private String nom;
 
 
-    public Portefeuille(final Context context, String anom, ArrayList<Titre> titres){
+    public Portefeuille(String anom, ArrayList<Titre> titres){
         nom = anom;
         mTitre = titres;
     }
 
-    private void createCards(Context context){
-        mCards = new ArrayList<TitreCard>();
-        for (int i=0; i < mTitre.size();i++)
-            mCards.add(new TitreCard(context, mTitre.get(i)));
+    public ArrayList<Titre> getTitre() {
+        return mTitre;
     }
 
+    public void setmTitre(ArrayList<Titre> mTitre) {
+        this.mTitre = mTitre;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 }

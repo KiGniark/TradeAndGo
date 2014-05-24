@@ -22,10 +22,7 @@ public class PortefeuilleCard extends FrameLayout {
 
     private void initView(final Context context, Portefeuille portefeuille){
         View view = LayoutInflater.from(context).inflate(R.layout.portefeuille_layout, null);
-        ((TextView)view.findViewById(R.id.portefeuille_name)).setText(portefeuille.getCode());
-        // Nuage
-        // Variation
-        //Valeur
+        ((TextView)view.findViewById(R.id.portefeuille_name)).setText(portefeuille.getNom());
         this.addView(view);
     }
 }
