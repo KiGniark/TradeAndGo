@@ -29,9 +29,6 @@
         <item name="android:textSize">25px</item>
     </style>
 
-
-
-
     <style name="YellowFont">
         <item name="android:textColor">#FFEB5B</item>
     </style>
@@ -39,4 +36,21 @@
     <style name="CenterText">
         <item name="android:textAlignment">center</item>
     </style>
+
+    <style name="Header">
+        <item name="android:textColor">#F0F0F0FF</item>
+    </style>
+
+    <style name="row_even">
+        <item name="android:textColor">#F0F0F0FF</item>
+    </style>
+    
+    <style name="row_odd">
+        <item name="android:textColor">#F0F0F0F0</item>
+    </style>
+
+
+
+
+
 </resources>
