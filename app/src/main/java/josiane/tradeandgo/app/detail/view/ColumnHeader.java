@@ -12,6 +12,5 @@ public class ColumnHeader extends TextView {
     public ColumnHeader(Context context, String titre) {
         super(context);
         setText(titre);
-
     }
 }

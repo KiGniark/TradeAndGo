@@ -10,6 +10,7 @@ import josiane.tradeandgo.app.util.data.titre.TypeTitre;
  */
 public class Titre {
     private String code;
+    private String nomValeur;
     private double valeur;
     private double variation;
     private TypeTitre typeVariation;
