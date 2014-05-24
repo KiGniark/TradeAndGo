@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#000000">
     <RelativeLayout
         android:id="@+id/body_layout"
         android:layout_width="@dimen/glass_card_body_layout_width"
@@ -40,7 +41,8 @@
                     android:id="@+id/textView"
                     android:layout_row="0"
                     android:layout_column="0"
-                    android:gravity="center_vertical" />
+                    android:gravity="center_vertical"
+                    android:focusableInTouchMode="true" />
 
                 <TextView
                     style="@style/SousTitre"
@@ -74,7 +76,8 @@
                 android:layout_column="0"
                 android:textStyle="bold"
                 android:textSize="40px"
-                android:gravity="bottom" />
+                android:gravity="bottom"
+                style="@style/Value" />
 
             <TextView
                 android:layout_width="@dimen/glass_card_information_column_right_width"
