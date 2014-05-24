@@ -1,5 +1,7 @@
 package josiane.tradeandgo.app.util.data.titre;
 
+import android.os.Handler;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,6 +16,26 @@ public class TitreManager {
     public static TitreManager getInstance() {
         return instance;
     }
+    static{
+        final Handler handler = new Handler();
+        Runnable r = new Runnable() {
+            @Override
+            public void run() {
+                getInstance().tick();
+                handler.postDelayed(this,500);
+            }
+        };
+        handler.postDelayed(r,500);
+    }
+
+    private void tick() {
+        for(Titre titre : titres.values()){
+            double lastValue = titre.getValeur();
+            titre.setValeur(titre.getTypeVariation().nextValue());
+            titre.setVariation(lastValue);
+        }
+    }
+
     private TitreManager(){
         String name = "ACCOR";
         titres.put(name,DataGenerator.titre().fx(name,.5));
@@ -22,16 +44,12 @@ public class TitreManager {
         name = "CAC 40";
         titres.put(name, DataGenerator.titre().expo(name, .01));
     }
-    Map<String, Titre> titres = new HashMap<String, Titre>();
+    public Map<String, Titre> titres = new HashMap<String, Titre>();
 
     public Titre getTitre(String id){
         Titre titre = titres.get(id);
         if(null != titre){
-            titres.put(id, DataGenerator.titre().generate(id,randomType()));
-        }else{
-            double lastValue = titre.getValeur();
-            titre.setValeur(titre.getTypeVariation().nextValue());
-            titre.setVariation(lastValue);
+            titres.put(id, DataGenerator.titre().generate(id, randomType()));
         }
         return titre;
     }

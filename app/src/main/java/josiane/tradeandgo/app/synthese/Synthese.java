@@ -51,8 +51,6 @@ public class Synthese extends Activity{
         });
     }
 
-
-
     private void createPortefeuilleCards() {
 
         //Titres reels
