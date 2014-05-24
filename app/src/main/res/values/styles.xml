@@ -13,7 +13,27 @@
     </style>
 
     <style name="GreenFont">
-        <item name="android:textColor">#ff005200</item>
+        <item name="android:textColor">#3AAA35</item>
+    </style>
+
+    <style name="Titre">
+        <item name="android:textColor">#1D71B8</item>
+        <item name="android:textSize">100px</item>
+    </style>
+    <style name="SousTitre">
+        <item name="android:textColor">#1D71B8</item>
+    </style>
+
+    <style name="Value">
+        <item name="android:textColor">#00000000</item>
+        <item name="android:textSize">25px</item>
+    </style>
+
+
+
+
+    <style name="YellowFont">
+        <item name="android:textColor">#FFEB5B</item>
     </style>
 
     <style name="CenterText">

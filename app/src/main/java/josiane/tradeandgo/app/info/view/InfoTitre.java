@@ -3,7 +3,6 @@ package josiane.tradeandgo.app.info.view;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,7 +21,7 @@ public class InfoTitre extends FrameLayout{
 
             @Override
             public void onClick(View view) {
-                tappedCard();
+                clickIt();
             }
         });
     }
@@ -34,5 +33,14 @@ public class InfoTitre extends FrameLayout{
         ((TextView)view.findViewById(R.id.info_valeurTitre)).setText(titre.getCode());
         ((TextView)view.findViewById(R.id.info_variationTitre)).setText(titre.getCode());
         this.addView(view);
+    }
+
+    private void clickIt() {
+        int i = mCardScrollView.getSelectedItemPosition();
+        if (mCardScrollView.getSelectedItemPosition() == 0)
+            createTitreCards(portReel);
+        else if (mCardScrollView.getSelectedItemPosition() == 1)
+            createTitreCards(portVirtuel);
+
     }
 }

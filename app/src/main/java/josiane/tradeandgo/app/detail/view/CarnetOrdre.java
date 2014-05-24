@@ -20,7 +20,7 @@ import josiane.tradeandgo.app.util.data.titre.TitreManager;
  */
 public class CarnetOrdre extends FrameLayout {
 
-    List<String> titresColonnes = Arrays.asList("Nb","Qte","Achat","Vente","Qte","Nb");
+    List<String> titresColonnes = Arrays.asList("Ordres","Qte.","Achat","Vente","Qte.","Ordres");
 
     GridLayout grid;
     private String titreId;
