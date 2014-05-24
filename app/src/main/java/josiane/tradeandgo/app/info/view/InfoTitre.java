@@ -1,6 +1,7 @@
 package josiane.tradeandgo.app.info.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -8,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import josiane.tradeandgo.app.R;
+import josiane.tradeandgo.app.detail.Detail;
 import josiane.tradeandgo.app.synthese.obj.Titre;
 
 /**
@@ -36,11 +38,7 @@ public class InfoTitre extends FrameLayout{
     }
 
     private void clickIt() {
-        int i = mCardScrollView.getSelectedItemPosition();
-        if (mCardScrollView.getSelectedItemPosition() == 0)
-            createTitreCards(portReel);
-        else if (mCardScrollView.getSelectedItemPosition() == 1)
-            createTitreCards(portVirtuel);
+        getContext().startActivity(new Intent(getContext(), Detail.class));
 
     }
 }
