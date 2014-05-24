@@ -15,15 +15,11 @@ import josiane.tradeandgo.app.info.view.InfoTitre;
 /**
  * Created by Kevin on 24/05/2014.
  */
-public class ListInfoTitre extends ArrayAdapter<InfoTitre> {
+public class ListInfoTitre extends CardScrollAdapter {
     List<InfoTitre> titres;
 
     public ListInfoTitre(List<InfoTitre> titres) {
         this.titres = titres;
-    }
-
-    public ListInfoTitre(Context context, int resource) {
-        super(context, resource);
     }
 
     @Override
