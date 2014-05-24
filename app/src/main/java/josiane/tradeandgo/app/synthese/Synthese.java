@@ -42,8 +42,6 @@ private final int PORT_REEL = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        rssIntent = new Intent(getBaseContext(), RSSListActivity.class);
-        startActivity(rssIntent);
 
         createPortefeuilleCards();
 
@@ -60,9 +58,6 @@ private final int PORT_REEL = 0;
         });
     }
 
-/*
-* Crée les 2 portefeuilles contenant qq titres
- */
 
     private void createPortefeuilleCards() {
 
@@ -105,15 +100,15 @@ private final int PORT_REEL = 0;
 
     private void tappedCard() {
 
-       if (mCardScrollView.getSelectedItemPosition() == 2) {
+       if (mCardScrollView.getSelectedItemPosition() == 0) {
            Intent intent = new Intent(getBaseContext(), Information.class);
            intent.putExtra("EXTRA_PORT", PORT_REEL);
-           //startActivity(intent);
+           startActivity(intent);
        }
-        else if (mCardScrollView.getSelectedItemPosition() == 0) {
+        else if (mCardScrollView.getSelectedItemPosition() == 1) {
            Intent intent = new Intent(getBaseContext(), Information.class);
            intent.putExtra("EXTRA_PORT", PORT_VIRTUEL);
-           //startActivity(intent);
+           startActivity(intent);
        }
 
     }

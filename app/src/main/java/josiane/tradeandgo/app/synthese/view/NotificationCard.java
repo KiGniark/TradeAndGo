@@ -21,13 +21,15 @@ public class NotificationCard extends FrameLayout {
     }
 
     private void initView(final Context context){
-        LinearLayout linearLayout = (LinearLayout)findViewById(R.id.layout);
+        View view = LayoutInflater.from(context).inflate(R.layout.notif_layout, null);
+        LinearLayout linearLayout = (LinearLayout)findViewById(R.id.NotifLayout);
         for (int i=0; i<5; i++) {
             View viewNotif = LayoutInflater.from(context).inflate(R.layout.notif_item, null);
             ((TextView) viewNotif.findViewById(R.id.notif_name)).setText("Notif "+i);
-            linearLayout.addView(viewNotif);
+            if (linearLayout!=null)
+                linearLayout.addView(viewNotif);
         }
-        View view = LayoutInflater.from(context).inflate(R.layout.notif_layout, null);
+
         this.addView(view);
     }
 }

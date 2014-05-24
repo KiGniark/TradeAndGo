@@ -1,5 +1,7 @@
 package josiane.tradeandgo.app.synthese.obj;
 
+import java.util.Random;
+
 import josiane.tradeandgo.app.R;
 import josiane.tradeandgo.app.util.data.titre.TypeTitre;
 
@@ -11,11 +13,11 @@ public class Titre {
     private double valeur;
     private double variation;
     private TypeTitre typeVariation;
+    private long nombre = Math.round(Math.random()*20);
+    private long quantite = Math.round(Math.random()*400);
 
     public Titre(String acode, double avaleur, double avar, TypeTitre typeVariation){
-        this.code = acode;
-        this.valeur = avaleur;
-        this.variation = avar;
+        this(acode,avaleur,avar);
         this.typeVariation = typeVariation;
     }
 // TO REMOVE
@@ -65,4 +67,21 @@ public class Titre {
         }
         return R.drawable.sun;
     }
+
+    public long getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(long nombre) {
+        this.nombre = nombre;
+    }
+
+    public long getQuantite() {
+        return quantite;
+    }
+
+    public void setQuantite(long quantite) {
+        this.quantite = quantite;
+    }
+
 }

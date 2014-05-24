@@ -2,6 +2,7 @@ package josiane.tradeandgo.app.info;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -40,8 +41,9 @@ public class Information extends Activity {
         mCardScrollView.activate();
         setContentView(mCardScrollView);
 
-        Timer timer = new Timer();
-        TimerTask task = new TimerTask() {
+
+        final Handler handler = new Handler();
+        Runnable r = new Runnable() {
             @Override
             public void run() {
                 int next = mCardScrollView.getSelectedItemPosition()+1;
@@ -50,9 +52,10 @@ public class Information extends Activity {
                     next = 0;
                 }
                 mCardScrollView.setSelection(next);
+                handler.postDelayed(this,2000);
             }
         };
-        timer.schedule(task,2000,2000);
+        handler.postDelayed(r,2000);
     }
 
     private void createInfoTitre() {

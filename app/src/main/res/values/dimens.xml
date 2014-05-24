@@ -3,11 +3,22 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="glass_card_margin">40px</dimen>
+    <dimen name="glass_card_margin">15px</dimen>
     <dimen name="glass_card_two_column_margin">30px</dimen>
-    <dimen name="glass_card_body_height">240px</dimen>
+    <dimen name="glass_card_body_height">265px</dimen>
     <dimen name="glass_card_left_column_width">240px</dimen>
 
+    <dimen name="glass_card_body_layout_width">560px</dimen>
+
+    <dimen name="glass_card_information_column_right_width">175px</dimen>
+    <dimen name="glass_card_information_column_left_width">375px</dimen>
+
+    <dimen name="glass_card_information_column_left_row_1_height">100px</dimen>
+    <dimen name="glass_card_information_column_left_row_2_height">30px</dimen>
+    <dimen name="glass_card_information_column_left_row_3_height">100px</dimen>
+    <dimen name="glass_card_information_column_right_row_1_height">140px</dimen>
+    <dimen name="glass_card_information_column_right_row_2_height">90px</dimen>
+
     <dimen name="glass_card_two_column_width">80px</dimen>
-    <dimen name="glass_card_two_column_height">80px</dimen>
+    <dimen name="glass_card_two_column_height">40px</dimen>
 </resources>
