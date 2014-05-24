@@ -25,11 +25,11 @@ public class TitreCard extends FrameLayout {
     }
 
     private void initView(final Context context, Titre titre){
-        View view = LayoutInflater.from(context).inflate(R.layout.titre_layout, null);
-        ((TextView)view.findViewById(R.id.title_name)).setText(titre.getCode());
-        // Nuage
-        // Variation
-        //Valeur
+        View view = LayoutInflater.from(context).inflate(R.layout.activity_information, null);
+        ((TextView)view.findViewById(R.id.info_nomTitre)).setText(titre.getCode());
+
+        ((TextView)view.findViewById(R.id.info_variationTitre)).setText(""+titre.getVariation());
+        ((TextView)view.findViewById(R.id.info_valeurTitre)).setText(""+titre.getValeur());
         this.addView(view);
     }
 }

@@ -12,11 +12,17 @@ public class Titre {
     private double variation;
     private TypeTitre typeVariation;
 
-    public Titre(String acode, double avaleur, float avar, TypeTitre typeVariation){
+    public Titre(String acode, double avaleur, double avar, TypeTitre typeVariation){
         this.code = acode;
         this.valeur = avaleur;
         this.variation = avar;
         this.typeVariation = typeVariation;
+    }
+// TO REMOVE
+    public Titre(String acode, double avaleur, double avar){
+        this.code = acode;
+        this.valeur = avaleur;
+        this.variation = avar;
     }
 
     public String getCode() {
