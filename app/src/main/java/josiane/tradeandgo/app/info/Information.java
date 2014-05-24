@@ -2,6 +2,7 @@ package josiane.tradeandgo.app.info;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Looper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
@@ -39,6 +40,7 @@ public class Information extends Activity {
         mCardScrollView.setAdapter(adapter);
         mCardScrollView.activate();
         setContentView(mCardScrollView);
+
 
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
