@@ -10,5 +10,5 @@
         android:layout_height="fill_parent"
         android:id="@+id/imageView"
         android:layout_gravity="center"
-        android:src="@drawable/TRADANGO2" />
+        android:src="@drawable/tradango2" />
 </FrameLayout>

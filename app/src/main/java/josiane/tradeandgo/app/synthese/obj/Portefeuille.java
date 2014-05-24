@@ -13,6 +13,7 @@ public class Portefeuille {
     private ArrayList<Titre> mTitre;
     private ArrayList<TitreCard> mCards;
     private String nom;
+    private int code;
 
 
     public Portefeuille(final Context context, String anom, ArrayList<Titre> titres){
@@ -26,4 +27,7 @@ public class Portefeuille {
             mCards.add(new TitreCard(context, mTitre.get(i)));
     }
 
+    public int getCode() {
+        return code;
+    }
 }

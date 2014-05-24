@@ -33,4 +33,4 @@ public class TitreCard extends FrameLayout {
         this.addView(view);
     }
 }
-}
+

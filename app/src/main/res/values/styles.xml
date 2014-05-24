@@ -5,4 +5,18 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="BackgroundColor">
+        <item name="android:textColor">#DDD</item>
+    </style>
+    <style name="RedFont">
+        <item name="android:textColor">#ffbd0000</item>
+    </style>
+
+    <style name="GreenFont">
+        <item name="android:textColor">#ff005200</item>
+    </style>
+
+    <style name="CenterText">
+        <item name="android:textAlignment">center</item>
+    </style>
 </resources>

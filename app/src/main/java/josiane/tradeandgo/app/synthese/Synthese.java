@@ -37,8 +37,8 @@ public class Synthese extends Activity{
     private void createCards() {
         mCards = new ArrayList<FrameLayout>();
 
-        mCards.add(new CustomCard(this, R.drawable.cantine, R.string.sponsor_cantine));
-        mCards.add(new CustomCard(this, R.drawable.arkea, R.string.sponsor_arkea));
+//        mCards.add(new CustomCard(this, R.drawable.cantine, R.string.sponsor_cantine));
+//        mCards.add(new CustomCard(this, R.drawable.arkea, R.string.sponsor_arkea));
     }
 
 
