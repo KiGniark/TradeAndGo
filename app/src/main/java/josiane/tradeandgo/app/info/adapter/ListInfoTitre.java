@@ -1,7 +1,9 @@
 package josiane.tradeandgo.app.info.adapter;
 
+import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 
 import com.google.android.glass.widget.CardScrollAdapter;
 
@@ -13,11 +15,15 @@ import josiane.tradeandgo.app.info.view.InfoTitre;
 /**
  * Created by Kevin on 24/05/2014.
  */
-public class ListInfoTitre extends CardScrollAdapter {
+public class ListInfoTitre extends ArrayAdapter<InfoTitre> {
     List<InfoTitre> titres;
 
     public ListInfoTitre(List<InfoTitre> titres) {
         this.titres = titres;
+    }
+
+    public ListInfoTitre(Context context, int resource) {
+        super(context, resource);
     }
 
     @Override
