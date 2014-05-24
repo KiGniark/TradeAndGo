@@ -37,6 +37,8 @@ public class Splash extends Activity {
     }
 
     private void startApp() {
+
         startActivity(new Intent(this,Synthese.class));
+
     }
 }

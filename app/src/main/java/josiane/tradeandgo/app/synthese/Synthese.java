@@ -20,6 +20,8 @@ import josiane.tradeandgo.app.info.Information;
 import josiane.tradeandgo.app.synthese.adapter.CustomScrollAdapter;
 import josiane.tradeandgo.app.synthese.obj.Portefeuille;
 import josiane.tradeandgo.app.synthese.obj.Titre;
+import josiane.tradeandgo.app.synthese.rss.RSSListActivity;
+import josiane.tradeandgo.app.synthese.view.NotificationCard;
 import josiane.tradeandgo.app.synthese.view.PortefeuilleCard;
 import josiane.tradeandgo.app.synthese.view.TitreCard;
 
@@ -34,11 +36,15 @@ private final int PORT_REEL = 0;
     private CardScrollView mCardScrollView;
     Portefeuille portReel;
     Portefeuille portVirtuel;
+    Intent rssIntent;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        rssIntent = new Intent(getBaseContext(), RSSListActivity.class);
+        startActivity(rssIntent);
+
         createPortefeuilleCards();
 
         mCardScrollView = new CardScrollView(this);
@@ -78,9 +84,11 @@ private final int PORT_REEL = 0;
         portVirtuel = new Portefeuille("Votre portefeuille virtuel", al);
 
         mCards = new ArrayList<FrameLayout>();
-
         mCards.add(new PortefeuilleCard(this, portReel));
         mCards.add(new PortefeuilleCard(this, portVirtuel));
+        mCards.add(new NotificationCard(this));
+
+
     }
 
     /*private void createTitreCards(Portefeuille port) {
@@ -100,12 +108,12 @@ private final int PORT_REEL = 0;
        if (mCardScrollView.getSelectedItemPosition() == 2) {
            Intent intent = new Intent(getBaseContext(), Information.class);
            intent.putExtra("EXTRA_PORT", PORT_REEL);
-           startActivity(intent);
+           //startActivity(intent);
        }
         else if (mCardScrollView.getSelectedItemPosition() == 0) {
            Intent intent = new Intent(getBaseContext(), Information.class);
            intent.putExtra("EXTRA_PORT", PORT_VIRTUEL);
-           startActivity(intent);
+           //startActivity(intent);
        }
 
     }
