@@ -12,6 +12,7 @@ import josiane.tradeandgo.app.synthese.view.TitreCard;
 public class Portefeuille {
     private ArrayList<Titre> mTitre;
     private String nom;
+    private int code;
 
 
     public Portefeuille(String anom, ArrayList<Titre> titres){
@@ -33,5 +34,8 @@ public class Portefeuille {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+    public int getCode() {
+        return code;
     }
 }

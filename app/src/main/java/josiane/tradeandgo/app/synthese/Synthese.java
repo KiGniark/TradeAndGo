@@ -88,18 +88,14 @@ public class Synthese extends Activity{
         mCardScrollView.setAdapter(adapter);
         mCardScrollView.activate();
         setContentView(mCardScrollView);
-
     }
 
     private void tappedCard() {
         int i = mCardScrollView.getSelectedItemPosition();
-        if (mCardScrollView.getSelectedItemPosition() != mCards.size() - 1) {
-            Toast.makeText(this, "T'as tapé:" + i, Toast.LENGTH_SHORT).show();
-        }
-        else if (mCardScrollView.getSelectedItemPosition() == 0)
+       if (mCardScrollView.getSelectedItemPosition() == 0)
             createTitreCards(portReel);
         else if (mCardScrollView.getSelectedItemPosition() == 1)
-            createTitreCards(portVirtual);
+            createTitreCards(portVirtuel);
 
     }
     @Override
