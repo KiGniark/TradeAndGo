@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.google.android.glass.app.Card;
+
 import josiane.tradeandgo.app.R;
 import josiane.tradeandgo.app.synthese.obj.Portefeuille;
 import josiane.tradeandgo.app.synthese.obj.Titre;

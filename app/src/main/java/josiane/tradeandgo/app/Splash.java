@@ -3,6 +3,7 @@ package josiane.tradeandgo.app;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -26,17 +27,16 @@ public class Splash extends Activity {
 
         TitreManager.getInstance(); // instancie TitreManager pour initialiser les titres.
 
-        Timer timer = new Timer();
-        TimerTask task = new TimerTask() {
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 startApp();
             }
-        };
-        timer.schedule(task,R.string.splashDelay);
+        }, 2000);
     }
 
     private void startApp() {
-        startActivity(new Intent(this,Information.class));
+        startActivity(new Intent(this,Synthese.class));
     }
 }

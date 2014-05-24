@@ -10,11 +10,13 @@ import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.Toast;
 
+import com.google.android.glass.app.Card;
 import com.google.android.glass.widget.CardScrollView;
 
 import java.util.ArrayList;
 
 import josiane.tradeandgo.app.R;
+import josiane.tradeandgo.app.info.Information;
 import josiane.tradeandgo.app.synthese.adapter.CustomScrollAdapter;
 import josiane.tradeandgo.app.synthese.obj.Portefeuille;
 import josiane.tradeandgo.app.synthese.obj.Titre;
@@ -25,17 +27,18 @@ import josiane.tradeandgo.app.synthese.view.TitreCard;
  * Created by Kevin on 23/05/2014.
  */
 public class Synthese extends Activity{
-
+private final int PORT_REEL = 0;
+    private final int PORT_VIRTUEL = 1;
     private ArrayList<FrameLayout> mCards;
     private ArrayList<FrameLayout> tCards;
     private CardScrollView mCardScrollView;
     Portefeuille portReel;
     Portefeuille portVirtuel;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       // setContentView(R.layout.activity_synthese);
         createPortefeuilleCards();
 
         mCardScrollView = new CardScrollView(this);
@@ -51,7 +54,9 @@ public class Synthese extends Activity{
         });
     }
 
-
+/*
+* Crée les 2 portefeuilles contenant qq titres
+ */
 
     private void createPortefeuilleCards() {
 
@@ -61,7 +66,7 @@ public class Synthese extends Activity{
         al.add(titre1);
         Titre titre2 = new Titre("EXP", 11.5, 15.2);
         al.add(titre2);
-        portReel = new Portefeuille("Portefeuille réel", al);
+        portReel = new Portefeuille("Votre portefeuille réel", al);
 
         //Titres virtuels
 
@@ -70,7 +75,7 @@ public class Synthese extends Activity{
         al.add(titre1);
         titre2 = new Titre("TRUC2", 11.5, 15.2);
         al.add(titre2);
-        portVirtuel = new Portefeuille("Portefeuille virtuel", al);
+        portVirtuel = new Portefeuille("Votre portefeuille virtuel", al);
 
         mCards = new ArrayList<FrameLayout>();
 
@@ -78,7 +83,7 @@ public class Synthese extends Activity{
         mCards.add(new PortefeuilleCard(this, portVirtuel));
     }
 
-    private void createTitreCards(Portefeuille port) {
+    /*private void createTitreCards(Portefeuille port) {
         tCards = new ArrayList<FrameLayout>();
         for (int i=0; i<port.getTitre().size();i++)
             tCards.add(new TitreCard(this, port.getTitre().get(i)));
@@ -88,14 +93,20 @@ public class Synthese extends Activity{
         mCardScrollView.setAdapter(adapter);
         mCardScrollView.activate();
         setContentView(mCardScrollView);
-    }
+    }*/
 
     private void tappedCard() {
-        int i = mCardScrollView.getSelectedItemPosition();
-       if (mCardScrollView.getSelectedItemPosition() == 0)
-            createTitreCards(portReel);
-        else if (mCardScrollView.getSelectedItemPosition() == 1)
-            createTitreCards(portVirtuel);
+
+       if (mCardScrollView.getSelectedItemPosition() == 2) {
+           Intent intent = new Intent(getBaseContext(), Information.class);
+           intent.putExtra("EXTRA_PORT", PORT_REEL);
+           startActivity(intent);
+       }
+        else if (mCardScrollView.getSelectedItemPosition() == 0) {
+           Intent intent = new Intent(getBaseContext(), Information.class);
+           intent.putExtra("EXTRA_PORT", PORT_VIRTUEL);
+           startActivity(intent);
+       }
 
     }
     @Override
