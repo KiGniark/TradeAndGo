@@ -14,22 +14,24 @@ import josiane.tradeandgo.app.synthese.obj.Portefeuille;
  * Created by christelle on 24/05/2014.
  */
 public class NotificationCard extends FrameLayout {
+    private LinearLayout linearLayout;
 
     public NotificationCard(Context context) {
         super(context);
-        initView(context);
+       // View view = LayoutInflater.from(context).inflate(R.layout.notif_layout, null);
+       // linearLayout = (LinearLayout)findViewById(R.id.NotifLayout);
+        View view = LayoutInflater.from(context).inflate(R.layout.rss, null);
+        this.addView(view);
+        //addNotif(context);
     }
 
-    private void initView(final Context context){
-        View view = LayoutInflater.from(context).inflate(R.layout.notif_layout, null);
-        LinearLayout linearLayout = (LinearLayout)findViewById(R.id.NotifLayout);
+
+    private void addNotif(Context context){
         for (int i=0; i<5; i++) {
             View viewNotif = LayoutInflater.from(context).inflate(R.layout.notif_item, null);
             ((TextView) viewNotif.findViewById(R.id.notif_name)).setText("Notif "+i);
             if (linearLayout!=null)
                 linearLayout.addView(viewNotif);
         }
-
-        this.addView(view);
     }
 }

@@ -15,6 +15,7 @@ import java.util.TimerTask;
 
 import josiane.tradeandgo.app.info.Information;
 import josiane.tradeandgo.app.synthese.Synthese;
+import josiane.tradeandgo.app.synthese.rss.RSSListActivity;
 import josiane.tradeandgo.app.util.data.titre.TitreManager;
 
 
@@ -37,8 +38,9 @@ public class Splash extends Activity {
     }
 
     private void startApp() {
-
+        startActivity(new Intent(this,RSSListActivity.class));
         startActivity(new Intent(this,Synthese.class));
+
 
     }
 }

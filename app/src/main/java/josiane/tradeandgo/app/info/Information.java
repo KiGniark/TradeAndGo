@@ -47,8 +47,8 @@ public class Information extends Activity {
             @Override
             public void run() {
                 int next = mCardScrollView.getSelectedItemPosition()+1;
-                int size = mCards.size();
-                if(next>size){
+                int size = mCardScrollView.getCount();
+                if(next>=size){
                     next = 0;
                 }
                 mCardScrollView.setSelection(next);

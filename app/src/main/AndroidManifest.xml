@@ -30,6 +30,7 @@
         </activity>
         <activity android:name=".synthese.Synthese"/>
         <activity android:name=".info.Information"/>
+        <activity android:name=".synthese.rss.RSSListActivity"/>
 
     </application>
 
